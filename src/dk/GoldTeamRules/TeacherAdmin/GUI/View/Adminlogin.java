@@ -11,7 +11,9 @@ import java.io.IOException;
 
 public class Adminlogin {
     public void OpenStudentlist(ActionEvent event) {
+
         Parent root;
+
         try{
             root = FXMLLoader.load(getClass().getResource("/dk/GoldTeamRules/TeacherAdmin/GUI/View/ClassWidnow.fxml"));
             Stage stage = new Stage();
