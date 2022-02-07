@@ -6,10 +6,12 @@ public class Student {
 
     private Image studentImage;
     private String name;
+    private int ID;
 
-    public Student(Image studentImage, String name) {
+    public Student(Image studentImage, String name, int ID) {
         this.studentImage = studentImage;
         this.name = name;
+        this.ID = ID;
     }
 
     public Image getStudentImage() {
@@ -26,5 +28,13 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }

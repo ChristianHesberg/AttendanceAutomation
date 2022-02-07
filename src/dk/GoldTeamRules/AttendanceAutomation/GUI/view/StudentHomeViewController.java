@@ -6,8 +6,6 @@ import dk.GoldTeamRules.AttendanceAutomation.BLL.ClassroomLogic;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
@@ -20,6 +18,8 @@ import java.util.ResourceBundle;
 public class StudentHomeViewController implements Initializable {
 
     private ClassroomLogic classroomLogic;
+    private Classroom classroom;
+    private ArrayList<Student> students;
 
     @FXML
     public TilePane tilePane;
@@ -44,12 +44,13 @@ public class StudentHomeViewController implements Initializable {
         });
 
          */
-        tilePane.getChildren().addAll(createImageButtons(classroomLogic.getClassroom()));
+        this.classroom = classroomLogic.getClassroom();
+        this.students = classroom.getStudents();
+        tilePane.getChildren().addAll(createImageButtons(classroom));
     }
 
-    public ArrayList<ImageView> createImageButtons(Classroom theClass)
+    private ArrayList<ImageView> createImageButtons(Classroom theClass)
     {
-        ArrayList<Student> students = theClass.getStudents();
         ArrayList<ImageView> images = new ArrayList<>();
 
         for(Student s: students)
@@ -58,15 +59,22 @@ public class StudentHomeViewController implements Initializable {
             imageView.setImage(s.getStudentImage());
             imageView.setFitWidth(100);
             imageView.setFitHeight(100);
+            imageView.setId(String.valueOf(s.getID()));
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent event) {
-                    System.out.println("whoop");
+                    int imageID = Integer.parseInt(imageView.getId());
+                    Student student = matchStudentToPicture(imageID, students);
                 }
             });
             images.add(imageView);
         }
         return images;
+    }
+
+    public Student matchStudentToPicture(int picID, ArrayList<Student> students)
+    {
+
     }
 
 }

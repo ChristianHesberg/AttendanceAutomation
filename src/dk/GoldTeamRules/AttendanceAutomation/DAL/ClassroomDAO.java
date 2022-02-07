@@ -13,10 +13,14 @@ public class ClassroomDAO {
     {
         ArrayList<Student> students = new ArrayList<>();
         Image studentImage = new Image("C:\\GitHub\\AttendanceAutomation\\src\\dk\\GoldTeamRules\\AttendanceAutomation\\GUI\\view\\thamm.png");
-        students.add(new Student(studentImage, "bob"));
-        students.add(new Student(studentImage, "fred"));
-        students.add(new Student(studentImage, "bob"));
-        students.add(new Student(studentImage, "fred"));
+        students.add(new Student(studentImage, "bob", 1));
+        students.add(new Student(studentImage, "fred", 2));
+        students.add(new Student(studentImage, "bob",3 ));
+        students.add(new Student(studentImage, "fred", 4));
+        students.add(new Student(studentImage, "bob",5 ));
+        students.add(new Student(studentImage, "fred",6));
+        students.add(new Student(studentImage, "bob",7));
+        students.add(new Student(studentImage, "fred",8));
         return new Classroom("CS", students);
     }
 
