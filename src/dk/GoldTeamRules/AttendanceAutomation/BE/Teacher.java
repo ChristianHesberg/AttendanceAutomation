@@ -20,6 +20,8 @@ public class Teacher {
 
     public int getId(){return id;}
 
+    public void setId(){this.id = id;}
+
     public void setClasses(ArrayList<Classroom> classes){this.classes = classes;}
 
     public  ArrayList<Classroom> getClasses(){return classes;}
