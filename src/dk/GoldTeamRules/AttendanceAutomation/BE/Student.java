@@ -2,11 +2,14 @@ package dk.GoldTeamRules.AttendanceAutomation.BE;
 
 import javafx.scene.image.Image;
 
+import java.util.ArrayList;
+
 public class Student {
 
     private Image studentImage;
     private String name;
     private int ID;
+    private ArrayList<Classroom> classes;
 
     public Student(Image studentImage, String name, int ID) {
         this.studentImage = studentImage;
