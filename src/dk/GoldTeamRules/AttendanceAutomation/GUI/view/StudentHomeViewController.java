@@ -1,50 +1,46 @@
 package dk.GoldTeamRules.AttendanceAutomation.GUI.view;
 
 import dk.GoldTeamRules.AttendanceAutomation.BE.Classroom;
+import dk.GoldTeamRules.AttendanceAutomation.util.CurrentStudent;
 import dk.GoldTeamRules.AttendanceAutomation.BE.Student;
-import dk.GoldTeamRules.AttendanceAutomation.BLL.ClassroomLogic;
+import dk.GoldTeamRules.AttendanceAutomation.GUI.model.ClassroomModel;
+import dk.GoldTeamRules.AttendanceAutomation.GUI.model.StudentModel;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.TilePane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class StudentHomeViewController implements Initializable {
 
-    private ClassroomLogic classroomLogic;
+    private ClassroomModel classroomModel;
+    private StudentModel studentModel;
+
     private Classroom classroom;
     private ArrayList<Student> students;
 
     @FXML
     public TilePane tilePane;
-    @FXML
-    private BorderPane borderPane;
 
     public StudentHomeViewController() {
-        this.classroomLogic =  new ClassroomLogic();
+        this.classroomModel =  new ClassroomModel();
+        this.studentModel = new StudentModel();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        /*Image image = new Image("C:\\GitHub\\AttendanceAutomation\\src\\dk\\GoldTeamRules\\AttendanceAutomation\\GUI\\view\\thamm.png");
-        ImageView iv1 = new ImageView(image);
-        iv1.setFitHeight(100);
-        iv1.setFitWidth(100);
-        iv1.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("whoop");
-            }
-        });
-
-         */
-        this.classroom = classroomLogic.getClassroom();
+        this.classroom = classroomModel.getClassroom();
         this.students = classroom.getStudents();
         tilePane.getChildren().addAll(createImageButtons(classroom));
     }
@@ -64,7 +60,11 @@ public class StudentHomeViewController implements Initializable {
                 @Override
                 public void handle(MouseEvent event) {
                     int imageID = Integer.parseInt(imageView.getId());
-                    Student student = matchStudentToPicture(imageID, students);
+                    Student student = studentModel.matchStudentToPicture(imageID, students);
+                    System.out.println(student);
+                    CurrentStudent.clearCurrentStudent();
+                    CurrentStudent.getInstance(student);
+                    openConfirmation();
                 }
             });
             images.add(imageView);
@@ -72,9 +72,18 @@ public class StudentHomeViewController implements Initializable {
         return images;
     }
 
-    public Student matchStudentToPicture(int picID, ArrayList<Student> students)
+    private void openConfirmation()
     {
-
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/dk/GoldTeamRules/AttendanceAutomation/GUI/view/ConfirmAttendanceView.fxml"));
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Attendance Options");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }
