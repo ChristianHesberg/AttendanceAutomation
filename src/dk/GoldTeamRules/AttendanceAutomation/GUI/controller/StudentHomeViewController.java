@@ -1,4 +1,4 @@
-package dk.GoldTeamRules.AttendanceAutomation.GUI.view;
+package dk.GoldTeamRules.AttendanceAutomation.GUI.controller;
 
 import dk.GoldTeamRules.AttendanceAutomation.BE.Classroom;
 import dk.GoldTeamRules.AttendanceAutomation.util.CurrentStudent;

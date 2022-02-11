@@ -1,4 +1,4 @@
-package dk.GoldTeamRules.AttendanceAutomation.GUI.view;
+package dk.GoldTeamRules.AttendanceAutomation.GUI.controller;
 
 import dk.GoldTeamRules.AttendanceAutomation.BE.Student;
 import dk.GoldTeamRules.AttendanceAutomation.GUI.model.StudentModel;
@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,8 +34,9 @@ public class ConfirmAttendanceViewController implements Initializable {
     public void handleEditClick(ActionEvent actionEvent) {
     }
 
-    public void handleConfirmClick(ActionEvent actionEvent) {
-        Student student = CurrentStudent.getInstance(null).getCurrentStudent();
+    public void handleConfirmClick(ActionEvent actionEvent) throws InterruptedException {
+        Stage stage = (Stage) confirmAttendanceBtn.getScene().getWindow();
+        stage.close();
 
     }
 }
