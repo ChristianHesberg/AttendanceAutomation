@@ -1,16 +1,18 @@
-package dk.GoldTeamRules.AttendanceAutomation.GUI.view;
+package dk.GoldTeamRules.AttendanceAutomation.GUI.controller;
 
 import dk.GoldTeamRules.AttendanceAutomation.BE.Classroom;
 import dk.GoldTeamRules.AttendanceAutomation.util.CurrentStudent;
 import dk.GoldTeamRules.AttendanceAutomation.BE.Student;
 import dk.GoldTeamRules.AttendanceAutomation.GUI.model.ClassroomModel;
 import dk.GoldTeamRules.AttendanceAutomation.GUI.model.StudentModel;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
@@ -24,6 +26,7 @@ import java.util.ResourceBundle;
 
 public class StudentHomeViewController implements Initializable {
 
+    public Button setClassBtn;
     private ClassroomModel classroomModel;
     private StudentModel studentModel;
 
@@ -85,5 +88,17 @@ public class StudentHomeViewController implements Initializable {
             e.printStackTrace();
         }
     }
- 
+
+    public void handleClassClick(ActionEvent actionEvent) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/dk/GoldTeamRules/AttendanceAutomation/GUI/view/ClassesListView.fxml"));
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Attendance Options");
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

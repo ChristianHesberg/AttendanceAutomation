@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.GoldTeamRules.AttendanceAutomation.GUI.view.StudentHomeViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.GoldTeamRules.AttendanceAutomation.GUI.controller.StudentHomeViewController">
    <top>
       <HBox prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <padding>
@@ -31,7 +31,7 @@
             </TextField>
             <HBox alignment="TOP_RIGHT" prefHeight="92.0" prefWidth="329.0">
                <children>
-                  <Button mnemonicParsing="false" text="Set Class">
+                  <Button fx:id="setClassBtn" mnemonicParsing="false" onAction="#handleClassClick" text="Set Class">
                      <HBox.margin>
                         <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                      </HBox.margin>
