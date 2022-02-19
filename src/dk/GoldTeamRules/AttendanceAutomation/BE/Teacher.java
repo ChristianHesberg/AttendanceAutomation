@@ -25,4 +25,9 @@ public class Teacher {
     public void setClasses(ArrayList<Classroom> classes){this.classes = classes;}
 
     public  ArrayList<Classroom> getClasses(){return classes;}
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

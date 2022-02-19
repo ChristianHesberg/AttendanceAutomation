@@ -44,4 +44,9 @@ public class Classroom {
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
     }
+
+    @Override
+    public String toString() {
+        return name + " - " + teacher;
+    }
 }

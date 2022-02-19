@@ -24,4 +24,17 @@ public class ClassroomDAO {
         return new Classroom("CS", students);
     }
 
+    public ArrayList<Classroom> getAllClassrooms()
+    {
+        ArrayList<Student> emptyStudentList = new ArrayList<>();
+        ArrayList<Classroom> classrooms = new ArrayList<>();
+
+        Teacher teacher = new Teacher("Jeppe", 1, classrooms);
+
+        classrooms.add(new Classroom("Math", teacher, emptyStudentList));
+        classrooms.add(new Classroom("Bio", teacher, emptyStudentList));
+        classrooms.add((new Classroom("Computer Science", teacher, emptyStudentList)));
+        return classrooms;
+    }
+
 }
