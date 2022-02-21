@@ -6,7 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main1 extends Application {
+import java.awt.*;
+
+public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/dk/GoldTeamRules/TeacherAdmin/GUI/View/Adminlogin.fxml"));
