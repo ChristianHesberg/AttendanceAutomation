@@ -22,25 +22,24 @@ import java.util.ArrayList;
 public class ClassroomModel {
 
     private ClassroomLogic classroomLogic;
-    private ObservableList<ImageView> imageViewObservableList;
 
     public ClassroomModel()
     {
         this.classroomLogic = new ClassroomLogic();
-        this.imageViewObservableList = FXCollections.observableArrayList();
-
     }
 
-    public ObservableList<ImageView> getImageViewObservableList() {
-        return imageViewObservableList;
-    }
 
     public Classroom getClassroom()
     {
         return classroomLogic.getClassroom();
     }
 
-    public void createImageButtons(Classroom theClass)
+    public ArrayList<Classroom> getAllClassrooms()
+    {
+        return classroomLogic.getAllClassrooms();
+    }
+
+    public ArrayList<ImageView> createImageButtons(Classroom theClass)
     {
         ArrayList<ImageView> images = new ArrayList<>();
         ArrayList<Student> students = theClass.getStudents();
@@ -65,9 +64,7 @@ public class ClassroomModel {
             });
             images.add(imageView);
         }
-        imageViewObservableList.clear();
-        imageViewObservableList.addAll(images);
-        //return images;
+        return images;
     }
 
     private Student matchStudentToPicture(int imageID, ArrayList<Student> students)

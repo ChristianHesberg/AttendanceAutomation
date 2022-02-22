@@ -18,7 +18,6 @@ import java.util.ResourceBundle;
 public class ClassListViewController implements Initializable {
     @FXML
     private JFXButton confirmClassBtn;
-    private ClassroomLogic classroomLogic;
     private ClassroomModel classroomModel;
 
     @FXML
@@ -26,9 +25,8 @@ public class ClassListViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.classroomLogic = new ClassroomLogic();
         this.classroomModel = new ClassroomModel();
-        ObservableList<Classroom> classroomObservableList = FXCollections.observableList(classroomLogic.getAllClassrooms());
+        ObservableList<Classroom> classroomObservableList = FXCollections.observableList(classroomModel.getAllClassrooms());
         listViewClasses.setItems(classroomObservableList);
 
     }

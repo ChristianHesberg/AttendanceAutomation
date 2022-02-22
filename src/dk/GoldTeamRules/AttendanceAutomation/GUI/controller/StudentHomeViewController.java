@@ -5,6 +5,7 @@ import dk.GoldTeamRules.AttendanceAutomation.util.CurrentStudent;
 import dk.GoldTeamRules.AttendanceAutomation.BE.Student;
 import dk.GoldTeamRules.AttendanceAutomation.GUI.model.ClassroomModel;
 import dk.GoldTeamRules.AttendanceAutomation.GUI.model.StudentModel;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.TilePane;
@@ -26,6 +28,10 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class StudentHomeViewController implements Initializable {
+    @FXML
+    private Button confirmClassBtn;
+    @FXML
+    private ChoiceBox<Classroom> classChoiceBox;
     @FXML
     private Button setClassBtn;
     private ClassroomModel classroomModel;
@@ -46,9 +52,8 @@ public class StudentHomeViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         this.classroom = classroomModel.getClassroom();
         this.students = classroom.getStudents();
-        classroomModel.createImageButtons(classroom);
-        tilePane.getChildren().setAll(classroomModel.getImageViewObservableList());
-                //.addAll(classroomModel.createImageButtons(classroom));
+        classChoiceBox.setItems(FXCollections.observableArrayList(classroomModel.getAllClassrooms()));
+        tilePane.getChildren().addAll(classroomModel.createImageButtons(classroom));
     }
 
 
@@ -64,5 +69,10 @@ public class StudentHomeViewController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void chooseClassClick(ActionEvent actionEvent) {
+        tilePane.getChildren().clear();
+        tilePane.getChildren().addAll(classroomModel.createImageButtons(classChoiceBox.getValue()));
     }
 }
