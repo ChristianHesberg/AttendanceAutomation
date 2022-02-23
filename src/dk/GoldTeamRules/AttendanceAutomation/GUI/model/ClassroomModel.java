@@ -4,9 +4,6 @@ import dk.GoldTeamRules.AttendanceAutomation.BE.Classroom;
 import dk.GoldTeamRules.AttendanceAutomation.BE.Student;
 import dk.GoldTeamRules.AttendanceAutomation.BLL.ClassroomLogic;
 import dk.GoldTeamRules.AttendanceAutomation.util.CurrentStudent;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -28,21 +25,14 @@ public class ClassroomModel {
         this.classroomLogic = new ClassroomLogic();
     }
 
-
-    public Classroom getClassroom()
-    {
-        return classroomLogic.getClassroom();
-    }
-
     public ArrayList<Classroom> getAllClassrooms()
     {
         return classroomLogic.getAllClassrooms();
     }
 
-    public ArrayList<ImageView> createImageButtons(Classroom theClass)
+    public ArrayList<ImageView> createImageButtons(ArrayList<Student> students)
     {
         ArrayList<ImageView> images = new ArrayList<>();
-        ArrayList<Student> students = theClass.getStudents();
 
         for(Student s: students)
         {
@@ -60,6 +50,8 @@ public class ClassroomModel {
                     CurrentStudent.clearCurrentStudent();
                     CurrentStudent.getInstance(student);
                     openConfirmation();
+                    //imageView.setVisible(false);
+                    //imageView.setManaged(false);
                 }
             });
             images.add(imageView);

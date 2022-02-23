@@ -13,11 +13,6 @@ public class ClassroomLogic {
         this.classroomDAO = new ClassroomDAO();
     }
 
-    public Classroom getClassroom()
-    {
-        return classroomDAO.getClassroom();
-    }
-
     public ArrayList<Classroom> getAllClassrooms()
     {
         return classroomDAO.getAllClassrooms();
