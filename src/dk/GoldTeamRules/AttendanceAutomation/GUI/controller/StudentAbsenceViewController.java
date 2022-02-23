@@ -38,11 +38,19 @@ public class StudentAbsenceViewController implements Initializable {
         XYChart.Series series = new XYChart.Series();
         series.setName("Absence");
 
-        series.getData().add(new XYChart.Data<String, Double>("Monday", CurrentStudent.getInstance(null).getCurrentStudent().getAbsence()*100));
+        /*series.getData().add(new XYChart.Data<String, Double>("Monday", CurrentStudent.getInstance(null).getCurrentStudent().getAbsence()*100));
         series.getData().add(new XYChart.Data<String, Double>("Tuesday", CurrentStudent.getInstance(null).getCurrentStudent().getAbsence()*100));
         series.getData().add(new XYChart.Data<String, Double>("Wednesday", CurrentStudent.getInstance(null).getCurrentStudent().getAbsence()*100));
         series.getData().add(new XYChart.Data<String, Double>("Thursday", CurrentStudent.getInstance(null).getCurrentStudent().getAbsence()*100));
         series.getData().add(new XYChart.Data<String, Double>("Friday", CurrentStudent.getInstance(null).getCurrentStudent().getAbsence()*100));
+
+
+         */
+        series.getData().add(new XYChart.Data<String, Double>("Monday", 5.0));
+        series.getData().add(new XYChart.Data<String, Double>("Tuesday", 5.2));
+        series.getData().add(new XYChart.Data<String, Double>("Wednesday", 5.7));
+        series.getData().add(new XYChart.Data<String, Double>("Thursday", 6.1));
+        series.getData().add(new XYChart.Data<String, Double>("Friday", 4.2));
 
         return series;
     }
