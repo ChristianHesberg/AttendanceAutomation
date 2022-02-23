@@ -9,7 +9,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ClassroomDAO {
-    Image studentImage = new Image("C:\\GitHub\\AttendanceAutomation\\src\\dk\\GoldTeamRules\\AttendanceAutomation\\GUI\\view\\thamm.png");
+    Image studentImage = new Image("\\images\\PlaceholderProfile.png");
 
     public Classroom getClassroom()
     {
