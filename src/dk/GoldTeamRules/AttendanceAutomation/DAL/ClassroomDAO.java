@@ -7,7 +7,9 @@ import javafx.scene.image.Image;
 import java.util.ArrayList;
 
 public class ClassroomDAO {
-    Image studentImage = new Image("PlaceholderProfile.png");
+    //The placeholder profile image is kept in a folder marked with resources which makes it easier to call the image
+    Image studentImage = new Image("Images/PlaceholderProfile.png");
+
 
 
     public ArrayList<Classroom> getAllClassrooms()

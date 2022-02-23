@@ -1,5 +1,12 @@
-HBox
+Button {
+    -fx-background-radius: 200px;
+    -fx-background-color: blue;
+
+}
+Button:hover
 {
     -fx-background-color: purple;
-
+}
+ImageView{
+    -fx-background-radius: 10;
 }
