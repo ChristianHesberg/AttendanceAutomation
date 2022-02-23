@@ -9,7 +9,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ClassroomDAO {
-    Image studentImage = new Image("\\images\\PlaceholderProfile.png");
+    Image studentImage = new Image("PlaceholderProfile.png");
 
     public Classroom getClassroom()
     {
