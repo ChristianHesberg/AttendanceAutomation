@@ -3,34 +3,29 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.TilePane?>
-<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.GoldTeamRules.AttendanceAutomation.GUI.controller.StudentHomeViewController">
+<BorderPane maxHeight="384.0" maxWidth="575.0" minHeight="384.0" minWidth="575.0" prefHeight="384.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.GoldTeamRules.AttendanceAutomation.GUI.controller.StudentHomeViewController">
    <top>
       <HBox prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <padding>
             <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
          </padding>
          <children>
-            <Label prefHeight="20.0" prefWidth="85.0" text="Search">
-               <font>
-                  <Font size="14.0" />
-               </font>
+            <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#handleSearch" text="Search">
                <HBox.margin>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </HBox.margin>
-            </Label>
-            <TextField>
+            </Button>
+            <TextField fx:id="searchBar" prefHeight="26.0" prefWidth="139.0">
                <HBox.margin>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </HBox.margin>
             </TextField>
-            <HBox alignment="TOP_RIGHT" prefHeight="92.0" prefWidth="329.0">
+            <HBox alignment="TOP_RIGHT" prefHeight="34.0" prefWidth="194.0">
                <children>
                   <Button fx:id="confirmClassBtn" mnemonicParsing="false" onAction="#chooseClassClick" prefHeight="26.0" prefWidth="83.0" text="Confirm">
                      <HBox.margin>
@@ -39,7 +34,7 @@
                   </Button>
                </children>
             </HBox>
-            <ChoiceBox fx:id="classChoiceBox" prefWidth="150.0">
+            <ChoiceBox fx:id="classChoiceBox" prefHeight="26.0" prefWidth="139.0">
                <HBox.margin>
                   <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
                </HBox.margin>

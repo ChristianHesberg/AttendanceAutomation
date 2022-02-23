@@ -10,11 +10,27 @@ public class Student {
     private String name;
     private int ID;
     private ArrayList<Classroom> classes;
+    private double absence;
 
     public Student(Image studentImage, String name, int ID) {
         this.studentImage = studentImage;
         this.name = name;
         this.ID = ID;
+    }
+
+    public Student(Image studentImage, String name, int ID, double absence) {
+        this.studentImage = studentImage;
+        this.name = name;
+        this.ID = ID;
+        this.absence = absence;
+    }
+
+    public double getAbsence() {
+        return absence;
+    }
+
+    public void setAbsence(double absence) {
+        this.absence = absence;
     }
 
     public Image getStudentImage() {
