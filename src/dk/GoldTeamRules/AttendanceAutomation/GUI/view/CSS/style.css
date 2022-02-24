@@ -9,6 +9,10 @@ Button:hover
     -fx-background-color: #9e9ee9;
     -fx-cursor: hand;
 }
+ImageView:hover
+{
+    -fx-cursor: hand;
+}
 .font
 {
     -fx-font-family: Arial;
