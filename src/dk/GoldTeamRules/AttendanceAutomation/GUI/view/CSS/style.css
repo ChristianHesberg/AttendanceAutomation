@@ -7,6 +7,7 @@ Button
 Button:hover
 {
     -fx-background-color: #9e9ee9;
+    -fx-cursor: hand;
 }
 .font
 {
