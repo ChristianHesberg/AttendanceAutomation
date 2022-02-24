@@ -8,13 +8,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.GoldTeamRules.AttendanceAutomation.GUI.controller.ConfirmAttendanceViewController">
+<?import java.net.URL?>
+<HBox maxHeight="-Infinity" style="-fx-background-color: #c8c8e6;" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.GoldTeamRules.AttendanceAutomation.GUI.controller.ConfirmAttendanceViewController" >
+   <stylesheets>
+      <URL value="@CSS/style.css" />
+   </stylesheets>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
    <children>
-      <Button fx:id="editAttendanceBtn" mnemonicParsing="false" onAction="#handleEditClick" text="Edit Attendance" />
-      <VBox alignment="CENTER" prefHeight="390.0" prefWidth="397.0">
+      <Button fx:id="editAttendanceBtn" mnemonicParsing="false" onAction="#handleEditClick" text="Edit Attendance"/>
+      <VBox alignment="CENTER" prefHeight="390.0" prefWidth="397.0"  styleClass="font">
          <children>
             <Label fx:id="studentNameLbl" text="Label">
                <padding>
@@ -24,10 +28,11 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <JFXButton fx:id="confirmAttendanceBtn" buttonType="RAISED" onAction="#handleConfirmClick" prefHeight="262.0" prefWidth="338.0" ripplerFill="#1e894d" text="Confirm Attendance">
+            <JFXButton fx:id="confirmAttendanceBtn" buttonType="RAISED" onAction="#handleConfirmClick" prefHeight="262.0" prefWidth="338.0" ripplerFill="#1e894d" text="Confirm Attendance"  style="-fx-background-color: #fafafa; -fx-background-radius: 20px " >
                <font>
                   <Font size="24.0" />
-               </font></JFXButton>
+               </font>
+            </JFXButton>
          </children>
       </VBox>
    </children>

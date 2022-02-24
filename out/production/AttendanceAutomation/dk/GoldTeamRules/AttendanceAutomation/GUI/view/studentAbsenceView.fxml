@@ -5,16 +5,21 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.GoldTeamRules.AttendanceAutomation.GUI.controller.StudentAbsenceViewController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="303.0" prefWidth="600.0" styleClass="font" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.GoldTeamRules.AttendanceAutomation.GUI.controller.StudentAbsenceViewController">
    <children>
-      <Label fx:id="weekLbl" text="Label">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <AnchorPane prefHeight="37.0" prefWidth="600.0" style="-fx-background-color: #c8c8e6;">
+         <children>
+            <Label fx:id="weekLbl" layoutX="9.0" layoutY="8.0" text="Label" AnchorPane.leftAnchor="9.0" AnchorPane.topAnchor="8.0">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
       <LineChart fx:id="lineChart" prefHeight="171.0" prefWidth="635.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
@@ -23,13 +28,13 @@
           <NumberAxis prefHeight="123.0" prefWidth="28.0" side="LEFT" />
         </yAxis>
       </LineChart>
-      <Label fx:id="currentAbsenceLbl" text="Label">
+      <Label fx:id="currentAbsenceLbl" prefHeight="28.0" prefWidth="48.0" text="Label">
          <font>
-            <Font size="18.0" />
+            <Font size="19.0" />
          </font>
+         <VBox.margin>
+            <Insets left="10.0" />
+         </VBox.margin>
       </Label>
    </children>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
 </VBox>

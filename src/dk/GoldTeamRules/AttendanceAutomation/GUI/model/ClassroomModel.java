@@ -41,6 +41,7 @@ public class ClassroomModel {
             imageView.setFitWidth(100);
             imageView.setFitHeight(100);
             imageView.setId(String.valueOf(s.getID()));
+            imageView.getStyleClass().add("profilePic");
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent event) {
